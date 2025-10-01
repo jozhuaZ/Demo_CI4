@@ -6,22 +6,12 @@ use CodeIgniter\Model;
 
 class UserModel extends Model
 {
-    protected $table            = 'employee';
+    protected $table            = 'users';
     protected $primaryKey       = 'id';
     protected $allowedFields    = [
-                                    'FirstName', 
-                                    'LastName', 
-                                    'Email', 
-                                    'Salary'
+                                    'firstname',
+                                    'lastname', 
+                                    'email'
                                 ];
 
-    public function createUser(array $data): bool
-    {
-        try {
-            return $this->insert($data) !== false;
-        } catch (\Throwable $e) {
-            log_message('error', $e->getMessage());
-            return false;
-        }
-    }
 }

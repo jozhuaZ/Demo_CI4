@@ -6,11 +6,6 @@
     <title>Home Page</title>
 </head>
 <body>
-    <?php if(session()->getFlashdata('success')): ?>
-        <p style="color: green;">
-            <?= session()->getFlashdata('success') ?>
-        </p>
-    <?php endif; ?>
     <h1>Home Page</h1>
 </body>
 </html>
