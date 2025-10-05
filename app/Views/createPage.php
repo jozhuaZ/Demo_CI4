@@ -3,19 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
+    <title>Document</title>
 </head>
 <body>
-
-    <form action="<?= base_url('create') ?>" method="post">
-        <label for="firstname">FirstName</label>
+    <form action="<?php echo base_url('create-user') ?>" method="post">
+        <label>First Name</label>
         <input type="text" name="firstname">
 
-        <label for="lastname">LastName</label>
+        <label>Middle Name</label>
+        <input type="text" name="middlename">
+        
+        <label>Last Name</label>
         <input type="text" name="lastname">
-
-        <label for="email">Email</label>
-        <input type="email" name="email">
 
         <input type="submit" value="Submit">
     </form>

@@ -3,28 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>List</title>
+    <title>List of Users</title>
 </head>
 <body>
-    <table border="1">
-        <thead>
+    <?php if(!empty($users)): ?>
+        <table border="1">
             <tr>
                 <th>ID</th>
-                <th>FirstName</th>
-                <th>LastName</th>
-                <th>Email</th>
+                <th>First Name</th>
+                <th>Middle Name</th>
+                <th>Last Name</th>
+                <th>Action</th>
             </tr>
-        </thead>
-        <tbody>
             <?php foreach($users as $user): ?>
                 <tr>
                     <td><?= $user['id']?></td>
                     <td><?= $user['firstname']?></td>
+                    <td><?= $user['middlename']?></td>
                     <td><?= $user['lastname']?></td>
-                    <td><?= $user['email']?></td>
+                    <td>
+                        <a href="<?= base_url('/get-user/' . $user['id'])?>">Update</a>
+                    </td>
                 </tr>
-            <?php endforeach;?>
-        </tbody>
-    </table>
+            <?php endforeach; ?>
+        </table>
+    <?php else: ?>
+        <h1>No Users found!</h1>
+    <?php endif; ?>
 </body>
 </html>

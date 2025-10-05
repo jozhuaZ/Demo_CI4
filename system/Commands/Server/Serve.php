@@ -96,7 +96,7 @@ class Serve extends BaseCommand
         $port = (int) (CLI::getOption('port') ?? 8080) + $this->portOffset;
 
         // Get the party started.
-        CLI::write('CodeIgniter development server started on http://' . $host . ':' . $port, 'green');
+        CLI::write('CodeIgniter development server started on http://' . $host . ':' . $port, 'blue',);
         CLI::write('Press Control-C to stop.');
 
         // Set the Front Controller path as Document Root.
